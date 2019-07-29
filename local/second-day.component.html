@@ -1,0 +1,122 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+    <loading *ngIf="isLoading"></loading> 
+        <section class="main">
+            <div class="content content2 pdPageTop pdPageBot">
+                <a class="logo" alt="Vodafone" href="javascript:;"></a>
+                <div class="pageArea pageArea2 posRel">
+                    <h1 class="hLine headSpec">Size Özel<br><span class="colorRed">Vodafone</span> Servisleri</h1>
+                    <p class="vfServicesText text"><b>Vodafone</b>’un özelliklerinden doğru yararlanmanız için kullanmadığınız servisleri aşağıya listeledik. Tek yapmanız gereken kullanmak istediklerinizi açıp, mükemmel bir <b>Vodafone deneyimi</b> yaşamak.</p>
+                    <div class="vfServices clearfix">
+                        <h3><b>Vodafone</b> Servisleri</h3>
+                        <ul *ngFor="let servis of secondDayList">  
+                        <li *ngIf="servis.visible == 'true'" style="border-bottom: 1px solid #dcdcdc;padding-bottom: 2.6vw;margin-bottom: 1.93vw;">
+                                <div class="col-8" *ngIf="servis.visible == 'true'">
+                                    <p class="text"><b>{{servis.name}}</b></p>
+                                    <p class="infoText">{{servis.description}}</p>
+                                </div>
+                                <div *ngIf="servis.status == 'true' && servis.visible=='true'" >
+                                    <form class="toggleSwitchForm">
+                                        <label class="switch">
+                                            <input type="checkbox" checked (click)="addRemoveService(servis.methodName,true,servis.index,servis.name,servis.shortName);" data-target="target1" data-url="/xxx" name="45G">                                           
+                                            <span *ngIf="servis.name!='4.5G' && servis.shortName!= 'INT' && servis.shortName!= 'ROAM'" class="slider round"></span>
+                                        </label>                                         
+                                    </form>
+                                </div>
+                                
+                                 <div  *ngIf="servis.status == 'false' && servis.visible=='true' " >
+                                    <form class="toggleSwitchForm">
+                                        <label class="switch">
+                                            <input type="checkbox"  (click)="addRemoveService(servis.methodName,false,servis.index,servis.name,servis.shortName);" data-target="target1" data-url="/xxx">                                           
+                                            <span class="slider round"></span>
+                                        </label>                                         
+                                    </form>
+                                </div>
+                            </li>
+                            </ul>
+                    </div>
+                    <!--a class="appDown" href="javascript:;">Vodafone Yanımda<br>Uygulamasını İndir</a-->
+                </div>
+            </div>
+            <footer>
+                <div class="inner cf">
+                    <figure><img src="assets/img/vodafone-footer.png" alt=""></figure>
+                    <div class="right">
+                        <p><b>Vodafone Yanımda Uygulaması</b>’nı indirerek, tarifenizle ilgili her detayı takip edebilirsiniz. </p>
+                        <div class="bottom-links">
+                            <a target="_blank" href="https://play.google.com/store/apps/details?id=com.vodafone.selfservis&hl=tr" class="google"></a>
+                            <a target="_blank" href="https://itunes.apple.com/tr/app/vodafone-yan%C4%B1mda/id489845659?l=tr&mt=8" class="appstore mobile-hide"></a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </section>
+        <div *ngIf="popupAcilir" class="popup-wrap" id="target1" >
+            <div class="popup-table">
+                <div class="popup-cell">
+                    <div class="popup-inner">
+                        <div class="popup-close" (click)="popupClose();"></div>
+                        <div *ngIf="popupAdd" class="first-screen">
+                            <h3>{{serviceName}}</h3>
+                            <p><b>{{serviceName}}</b> özelliğini aktif hale getirmeyi onaylıyor musunuz?</p>
+                            <p *ngIf="epostaozelligi"><b>aşağıdaki alana e-posta adresinizi giriniz.</b></p>
+                     	    <p *ngIf="roamOpen"><b>*Uluslararasi Arama Servisi sistem tarafından otomatik açılacaktır.</b></p>
+                            <input [(ngModel)]="emailAddress" type="text" *ngIf="epostaozelligi"  placeholder="E-Posta Adresi" maxlength="50">
+                 
+                            <a (click)="popupAddService(emailAddress);" class="button approve">EVET, AKTİF ET</a>
+                            <p *ngIf="popupAddFail">Bir hata oluştu, tekrar deneyiniz.</p>
+                        </div>
+                        <div *ngIf="popupRemove" >
+                            <h3>{{serviceName}}</h3>
+                            <p><b>{{serviceName}}</b> özelliğini kapatmayı onaylıyor musunuz?</p>
+                            <a (click)="popupRemoveService();" class="button approve-deactive">EVET, KAPAT</a>
+                            <p *ngIf="popupRemoveFail">Bir hata oluştu, tekrar deneyiniz.</p>
+                        </div>
+                        <div *ngIf="popupRemoveSucsess">
+                            <h3>Tebrikler</h3>
+                            <p><b>{{serviceName}}</b> servisiniz <br> başarıyla kapandı.</p>
+                            <a (click)="popupRemoveSucsessClose();" class="button approve">OK</a>
+                        </div>
+                        <div *ngIf="popupAddSucsess">
+                            <h3>Tebrikler</h3>
+                            <p><b>{{serviceName}}</b> servisiniz <br> başarıyla açıldı.</p>
+                            <a (click)="popupAddSucsessClose();" class="button approve">OK</a>
+                        </div>
+                         <div *ngIf="popupAddFail">
+                            <h3>Hata</h3>
+                            <p>Bir hata oluştu, tekrar deneyiniz..</p>
+                            <a (click)="popupRemoveFailClose();" class="button approve">OK</a>
+                        </div>
+                        <div *ngIf="ePostaFormatErr">
+                            <h3>Geçersiz e-posta</h3>
+                            <p>Yazdıgınız e-posta adresi uygun değil, lütfen tekrar deneyiniz.</p>
+                            <a (click)="popupRemoveFailClose();" class="button approve">OK</a>
+                        </div>
+                           <div *ngIf="popupRemoveFail">
+                            <h3>Hata</h3>
+                            <p>Bir hata oluştu, tekrar deneyiniz..</p>
+                            <a (click)="popupRemoveFailClose();" class="button approve">OK</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     
+        
+        <div class="mobile-landscape">
+            <div class="video-wrap mobile-loop-video">
+                <video class="video-js">
+                    <source src="assets/video/loop.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </body>
+</html>

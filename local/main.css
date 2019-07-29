@@ -1,0 +1,584 @@
+@charset "utf-8";
+@import url(../fonts/font.css);
+
+*, :after, :before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box }
+*:focus { outline: 0; }
+html  { width: 100%; height: 100%;font-size: 1em; line-height: 1.4; }
+html, html * { margin: 0; padding: 0; }
+body { background-color: #fcfdfd; font-family: 'VodafoneRg_W', sans-serif; font-weight: normal; color: #000; width: 100%; height: 100%; overflow: auto; overflow-y: scroll; }
+body.unflow{ overflow-y: scroll; top: 0; right: 0; height: 100%; position: fixed; margin-top: 0; width: 100%; }
+
+h1 { font-size: 4.48vw; font-family: 'VodafoneRg_W'; line-height: 1em; letter-spacing: .1vw; padding-bottom: 1.56vw; margin-bottom: 1.56vw; position: relative; }
+h1.headSpec { font-size: 2.5vw; line-height: 3vw; font-family: 'VodafoneLt_W'; font-weight: normal; }
+h1.headSpec2 span { font-family: 'VodafoneRgBd_W'; }
+h1.headSpec span{font-family: 'VodafoneRgBd_W';}
+h1.hLine:after { content: ""; position: absolute; width: 6.46vw; height: 1px; background-color: #787878; left: 0; bottom: 0; }
+h1.hLine.center:after { left: 10vw; }
+h1 span.headIn { font-family: 'VodafoneLt_W'; display: block; }
+b { font-weight:normal; }
+h1, h2, h3, h4, h5, h6 { font-weight: normal; }
+a { text-decoration: none; }
+input { font-family: 'VodafoneRgBd_W'; width: 100%; display: block; font-size: 1.5vw; padding: 1vw; border:2px solid #000; outline: none; text-align: center;letter-spacing: .02vw; }
+input:active,
+input:focus { outline: none;}
+button { font-family: 'VodafoneRg_W'; width: 100%; display: block; font-size: 1.1vw; padding: 1vw; outline: none; border:none;text-align: center;  }
+::-webkit-input-placeholder { color:#afafaf; font-family: 'VodafoneRg_W', sans-serif; font-size: 1.1vw; }
+::-moz-placeholder { color:#afafaf;font-family: 'VodafoneRg_W', sans-serif; font-size: 1.1vw; }
+:-ms-input-placeholder { color:#afafaf;font-family: 'VodafoneRg_W', sans-serif; font-size: 1.1vw; }
+:-moz-placeholder {  color:#afafaf;font-family: 'VodafoneRg_W', sans-serif; font-size: 1.1vw; }
+
+.page404 h1 { text-align: center; font-size: 18.65vw; color: #e60000; padding-bottom: 0; margin-bottom: 2.6vw; line-height: .7; font-family: 'VodafoneUC-ExtraBold'; }
+.page404 p { text-align: center; font-size: 2.4vw; line-height: 1; font-family: 'VodafoneUC'; }
+
+.text { font-family: 'VodafoneRg_W'; font-size: 1.67vw; line-height: 1.4em; padding-bottom: 2.6vw; }
+.text b { font-family: 'VodafoneRgBd_W'; }
+.mr5 { margin-right: 5%; }
+.center { text-align: center; }
+.colorRed { color: #e60000; }
+.pdPageTop { padding-top: 5vw; }
+.pdPageBot { padding-bottom: 8vw; }
+.posRel { position: relative; }
+.ovFHidden { overflow: hidden; }
+
+[class*=col-] { float: left; }
+.col-1 { width: 100%; }
+.col-10 { width: 10%; }
+.col-2 { width: 20%; }
+.col-3 { width: 30%; }
+.col-35 { width: 35%; }
+.col-4 { width: 40%; }
+.col-5 { width: 50%; }
+.col-6 { width: 60%; }
+.col-7 { width: 70%; }
+.col-8 { width: 80%; }
+.col-9 { width: 90%; }
+
+.main { overflow: hidden; width: 100%; position: relative; }
+.logo { background: url(../img/logo.png) no-repeat center; width: 2.92vw; height: 2.92vw; display: block; position: absolute; top: 2vw; left: 4.69vw; z-index: 3; -webkit-background-size: 100% auto; background-size: 100% auto; }
+
+.menuMobile, .menuOpen { display: none; }
+
+
+.content { width: 100.3%; height: 100%; min-height: 100vh; background: url(../img/bg-img.jpg) no-repeat center center; position: relative; z-index: 2; display: flex; justify-content: center; align-items: center; -webkit-background-size: cover; background-size: cover; }
+.content.content2 { background: url(../img/bg-img2.jpg) no-repeat top center;
+-webkit-background-size: 100% auto;
+	 	background-size: 100% auto;}
+.content.content3 { background: url(../img/bg-img3.jpg) no-repeat top center;
+    background-position: 0% 0% !important;
+-webkit-background-size: cover;
+	 	background-size: cover; }
+.content.content4 { background: url(../img/infographic.jpg) no-repeat top center;
+-webkit-background-size: 100% auto;
+	 	background-size: 100% auto; }
+.content.content6 { background: url(../img/bg-img6.jpg) no-repeat top center;
+-webkit-background-size: cover;
+    background-size: cover; }
+.content.content7 { background: url(../img/bg-img7.jpg) no-repeat top center;
+-webkit-background-size: cover;
+    background-size: cover; }
+.content.content4 h1 { font-family: 'VodafoneRg_W'; }
+
+.pageArea { margin: 0 auto; display: table-cell; padding: 2vw 1.56vw 2vw 1.56vw; vertical-align: middle; width: 31.25vw; }
+.pageArea.pageArea2 { width: 45vw; }
+.pageArea:after { content:""; position: absolute; top:0; right: 0; width: 1.3vw;height: 1.3vw;border-top: .2vw solid #3e3e3e;border-right: .2vw solid #3e3e3e; }
+.pageArea:before { content:""; position: absolute; bottom: 0; left: 0; width: 1.3vw;height: 1.3vw; border-bottom: .2vw solid #3e3e3e; border-left: .2vw solid #3e3e3e; }
+.pageArea .pageNumber { font-family: 'VodafoneRgBd_W';font-size: 1.98vw; color: #999999; position: absolute; right: -10vw; top: 6vw; -webkit-transform: rotate(90deg); -moz-transform: rotate(90deg); -ms-transform: rotate(90deg); -o-transform: rotate(90deg); transform: rotate(90deg); filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); }
+.pageArea .pageNumber:before {content: "";position: absolute;width: 3vw;height: .2vw;background-color: #838383;left: -4vw;top: 1.1vw;/* margin-top: -2vw; */}
+
+.pageForm input[type=text] { height: 3.8vw; font-size: 1.5vw; }
+.pageForm button.againSend { font-size: 1.46vw; background: transparent; font-family: 'VodafoneRg_W'; border: none; cursor: pointer; padding: 0; }
+.pageForm button.againSend:before { vertical-align: -26%; margin-right: .5vw; background: url(../img/again-send.png) no-repeat left center transparent; width: 2vw; height: 2vw; display: inline-block; content: ""; -webkit-background-size: 100%; background-size: 100%;}
+.pageForm .captcha { border: 2px solid #2e2e2e; width: 100%; height: 3.8vw; }
+.pageForm .row { margin-bottom: 1.04vw; float: left; width: 100%; }
+.pageForm .row .col-35 { margin-right: 5%; }
+
+#phoneForm {  }
+.vfServicesText.text { font-size: 1.46vw; }
+.vfServicesText.text b { font-family: 'VodafoneRgBd_W'; }
+.vfServices .text { padding-bottom: .5vw; font-family: 'VodafoneRgBd_W'; }
+.vfServices .infoText { font-size: 1.46vw; font-family: 'VodafoneRg_W'; line-height: 2.17vw; }
+.vfServices { background: url(../img/figure-line.png) no-repeat top center / 100%; padding-top: 3.5vw; }
+.vfServices h3 { font-family: 'VodafoneLt_W'; font-size: 2vw; margin-bottom: 2vw; }
+.vfServices h3 b {  font-family: 'VodafoneRgBd_W';}
+.vfServices .col-2 { margin-top: 3.5vw; }
+.vfServices li { float: left; width: 100%; list-style: none; border-bottom: 1px solid #dcdcdc; padding-bottom: 2.6vw; margin-bottom: 1.93vw; }
+.vfServices li:last-child { border-bottom: none; padding-bottom: 1vw; margin-bottom: 0; }
+.vfServices .toggleSwitchForm { float: right; }
+.vfServices .switch { position: relative; display: inline-block; width: 4.43vw; height: 2.45vw; }
+.vfServices .switch input {display:none;}
+.vfServices .switch .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #eae9e9; border-radius: 2.29vw; border: 1px solid #c1c1c1;
+-webkit-transition: .4s; 
+		transition: .4s;  }
+.vfServices .switch .slider.activeL:before { background: url(../img/loading-form.gif) no-repeat center #f5f5f5; background-size: cover; }
+.vfServices .switch .slider:before { position: absolute; border-radius: 50%; content: ""; height: 2.29vw; width: 2.29vw; background-color: #f5f5f5; left: .1vw; top: 0;
+-webkit-transition: .4s; 
+    transition: .4s; 
+-webkit-box-shadow: 0.1vw 0.2vw 0.4vw rgba(0,0,0,0.2); 
+    box-shadow: 0.1vw 0.2vw 0.4vw rgba(0,0,0,0.2); }
+.vfServices .switch input:checked + .slider { background-color: #37b128; }
+.vfServices .switch input:focus + .slider { box-shadow: 0 0 1px #37b128; }
+.vfServices .switch input:checked + .slider:before {
+-webkit-transform: translateX(83%); 
+	-ms-transform: translateX(83%); 
+		transform: translateX(83%); }
+
+.openingLink { position: absolute; right: 6.25vw; bottom: 7.29vw; z-index: 10; }
+.openingLink a { color: #fff; font-size: 1.98vw; font-family: 'VodafoneRg_W'; padding: 1vw; text-decoration: none; display: block; }
+.openingLink:after { content:""; position: absolute; top:0; right: 0; width: 1.3vw;height: 1.3vw;  border-top: .2vw solid #fff; border-right: .2vw solid #fff; }
+.openingLink:before { content:""; position: absolute; bottom: 0; left: 0; width: 1.3vw;height: 1.3vw;  border-bottom: .2vw solid #fff; border-left: .2vw solid #fff; }
+
+.infographic { border-top: 1px solid #7f7f7f; border-bottom: 1px solid #7f7f7f; margin-top: 2.19vw; position: relative; }
+.infographic li { display: block; }
+.infographic li div { border-bottom: 1px solid #bbb; padding: 1.82vw 3.13vw 2.34vw; }
+.infographic li:last-child div { border-bottom: none; }
+.infographic p { font-family: 'VodafoneLt_W'; font-size: 1.46vw; line-height: 1.2em; }
+.infographic .redNote { display: block; font-family: 'VodafoneRg_W';font-size: 1.88vw; }
+.infographic .redNote.tutarDetay { font-size: 1.3vw; }
+.infographic .redNote.tutarDetay.tutarDetayLast { margin-bottom: 8px; }
+.infographic .redNote b { color: #e60000; font-weight: normal;font-family: 'VodafoneRgBd_W';line-height: 1.1em; font-size: 1.88vw;  }
+.infographic span.bd { display: block; position: absolute; height: 5.21vw; width: 1px; background-color: #7f7f7f; }
+.infographic .bdLeftT { left: 0; top: 0; }
+.infographic .bdRightT { right: 0; top: 0; }
+.infographic .bdLeftB { left: 0; bottom: 0; }
+.infographic .bdRightB { right: 0; bottom: 0; }
+.infographic .bdLeftT:before { content:""; position: absolute; top:0; right: -1.3vw; width: 1.3vw;height: 1.3vw; border-top: .2vw solid #3e3e3e; border-left: .2vw solid #3e3e3e; }
+.infographic .bdLeftB:before { content:""; position: absolute; bottom: 0; left: 0; width: 1.3vw;height: 1.3vw; border-bottom: .2vw solid #3e3e3e; border-left: .2vw solid #3e3e3e; }
+.infographic .bdRightT:before { content:""; position: absolute; top:0; right: 0; width: 1.3vw;height: 1.3vw; border-top: .2vw solid #3e3e3e; border-right: .2vw solid #3e3e3e; }
+.infographic .bdRightB:before { content:""; position: absolute; bottom: 0; left: -1.3vw; width: 1.3vw;height: 1.3vw; border-bottom: .2vw solid #3e3e3e; border-right: .2vw solid #3e3e3e; }
+
+.infoHead { font-size: 2.5vw; font-family: 'VodafoneLt_W'; position: relative; padding: 2vw; letter-spacing: .1vw; }
+.infoHead:after {content:"";position: absolute;top:0;right: 0;width: 1.3vw;height: 1.3vw;border-top: .2vw solid #3e3e3e;border-right: .2vw solid #3e3e3e;}
+.infoHead:before { content:""; position: absolute; bottom: 0; left: 0;width: 1.3vw;height: 1.3vw;border-bottom: .2vw solid #3e3e3e; border-left: .2vw solid #3e3e3e; }
+
+.appDown { background: url(../img/app-logo.png) no-repeat left center; display: inline-block; height: 4.69vw; padding-left: 6vw; font-size: 1.67vw; font-family: 'VodafoneRg_W'; text-decoration: none; color: #000; margin: 2vw 0; padding-top: 0.3vw; transition: .4s;
+-webkit-background-size: 4.69vw auto;
+ background-size: 4.69vw auto; }
+.appDown:hover { color: #aaa; }
+
+.cornerNone:after, .pageArea.cornerNone:before {content: none; }
+.paddingTN { padding-top: 0; }
+.paddingBN { padding-bottom: 0; }
+
+
+/* validation */
+input[type=text].error{border-color: #e60000;}
+.timer{font-size: 1.46vw;font-family: 'VodafoneRg_W'; line-height:39px;}
+.timer.hidden{display: none;}
+.againSend{display: none;}
+.againSend.reveal{display: inline-block;}
+button.disabled{cursor: not-allowed;}
+
+.table { display: table; table-layout: fixed; }
+.table .cell {display: table-cell; vertical-align: middle; }
+
+.content.content5 { background: url(../img/bg-img5.jpg) no-repeat center center;
+-webkit-background-size: cover;
+ 		background-size: cover; }
+.content5 .table { width: 73%; margin: 0 auto }
+.content5 .cell { width: 50%; padding: 2vw 1vw; position: relative; }
+.content5 .cell .inner { position: relative; padding: 3vw; }
+.content5 .cell:first-child .inner:after { content:""; position: absolute; top:0; right: 0; width: 1.3vw;height: 1.3vw;border-top: .2vw solid #fff;border-right: .2vw solid #fff; }
+.content5 .cell:first-child .inner:before { content:""; position: absolute; bottom: 0; left: 0; width: 1.3vw;height: 1.3vw; border-bottom: .2vw solid #fff; border-left: .2vw solid #fff; }
+.content5 .cell h2 { color: #fff;font-family: 'VodafoneLt_W';font-size: 2vw; margin-bottom: 1vw;     line-height: 1.2em;}
+.content5 .cell h2 b { font-family: 'VodafoneRg_W'; }
+.content5 .cell p { font-family: 'VodafoneLt_W'; color: #fff;margin-bottom: 1vw; font-size: 1.46vw; }
+.content5 .cell p a { background: #fff;letter-spacing: .2vw; font-size: 1.1vw; font-family: 'VodafoneRg_W'; margin-top: 2vw; padding: 1.3vw 1vw;display: block; text-align: center; color: #000;
+-webkit-transition: .2s; 
+		transition: .2s; }
+.content5 .cell p a:hover { background: #000; color: #fff }
+.content5 .cell figure img { width: 75%; display: block; margin: 0 auto}
+.content5 .cell .bottom-links a { display: inline-block; }
+.content5 .cell .bottom-links .google { background: url(../img/google-store-logo2.png) no-repeat center; width: 13.85vw; height: 5vw; margin-right: .1vw;float: left;
+-webkit-background-size: 13.85vw auto;
+		background-size: 13.85vw auto;}
+.content5 .cell .bottom-links .appstore { background: url(../img/apple-store-logo2.png) no-repeat center;width: 13.85vw; height: 5vw; float: right;
+-webkit-background-size: 13.85vw auto;
+		background-size: 13.85vw auto;}
+
+/* ==========================================================================
+   POPUP
+   ========================================================================== */
+.popup-wrap { position: fixed; top: 0; left: 0;width: 100%; height: 100%; background: rgba(0,0,0,.7); z-index: 999; display: block; }
+.popup-wrap.reveal { display: block; }
+.popup-table { display: table; width: 100%; height: 100%;  }
+.popup-table .popup-cell { display: table-cell; vertical-align: middle; }
+.popup-inner { width: 30vw; margin: 0 auto; padding: 3vw;position: relative; color: #000; font-family: 'VodafoneRg_W'; min-height: 20vw;}
+.popup-inner .popup-close {background: url(../img/popupclose.png) no-repeat; width: 3.02vw; height: 3.23vw; position: absolute;top: 2vw; right: 2vw; cursor: pointer; z-index: 10;
+-webkit-background-size: 100% auto;
+  		background-size: 100% auto; }
+.popup-inner > * { position: relative; z-index: 6; }
+.popup-inner h3 { font-size: 4vw;  line-height: .9em; margin-bottom: .8vw;}
+.popup-inner p { font-size: 1.3vw; margin-bottom: 1.2vw; line-height: 1.2em;}
+.popup-inner p.error { text-align: center; font-size: 1.1vw; margin-top: .5vw;}
+.popup-inner p b { font-family: 'VodafoneRgBd_W';}
+.popup-inner input { margin-bottom: 1vw; }
+.popup-inner:before { content: ""; width: 100%; height: 100%; display: block;background: url(../img/popuptop.png) no-repeat left top; position: absolute; top: 0; left: 0;z-index:4;
+-webkit-background-size: 100% auto;
+  		background-size: 100% auto; }
+.popup-inner:after { content: ""; width: 100%; height: 100%; display: block;background: url(../img/popupbottom.png) no-repeat left bottom; position: absolute; top: 0; left: 0;z-index:3;
+-webkit-background-size: 100% auto;
+  		background-size: 100% auto; }
+.popup-inner .success-screen { padding-top: 3vw; position: relative; }
+.popup-inner .success-screen p { padding-right: 7vw; }
+.popup-inner .success-screen:after { position: absolute; top: 4vw;
+    right: 0;
+    width: 6.85vw;
+    height: 6.85vw; background: url(../img/success.png) no-repeat;content: "";
+-webkit-background-size: 100% auto;
+  		background-size: 100% auto; }
+
+.popup-inner .error-screen { position: relative; }
+.popup-inner .error-screen h3 { color: #e60000; }
+.popup-inner .error-screen p { padding-right: 7vw; margin-bottom: 0; }
+.popup-inner .error-screen:after { position: absolute; top: 4vw;
+    right: 0;
+    width: 6.85vw;
+    height: 6.85vw; background: url(../img/nosuccess.png) no-repeat;content: "";
+-webkit-background-size: 100% auto;
+      background-size: 100% auto; }
+
+.button,
+.pageForm button.submitBtn {width: 100%; display: block; text-align: center; color: #fff; letter-spacing: .2vw; font-size: 1.1vw;    font-family: 'VodafoneRg_W'; padding: 1.3vw 1vw; cursor: pointer;
+background: linear-gradient(-45deg, #a841a5, #923d89, #c352c0, #763966);background-size: 400% 400%;
+-webkit-animation: Gradient 5s ease infinite;
+   -moz-animation: Gradient 5s ease infinite;
+        animation: Gradient 5s ease infinite; }
+@-webkit-keyframes Gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@-moz-keyframes Gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes Gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.videoPageAlt { height: 100%; }
+.loading{background: url(../img/loading-bg.jpg) no-repeat center; background-size: cover; height: 100%;overflow: hidden;text-align: center;}
+.loading .loading-count-wrap{mix-blend-mode: multiply; color: #e60000; font-family: 'VodafoneRgBd_W'; font-size: 110vw; position: absolute;top: 50%; left: 50%;
+-webkit-transform: rotate(0deg) translateY(-50%) translateX(-50%);
+        transform: rotate(0deg) translateY(-50%) translateX(-50%); }
+.loading .loading-count-wrap span { display: block;
+-webkit-transform: rotate(90deg);
+        transform: rotate(90deg); }
+.loading .loading-bar{height: 2vw; width: 58vw; border: 0.1vw solid #e3e3e3;padding: 0.4vw 0.8vw;position: absolute;padding: 0.4vw 0.8vw;bottom: 15vw;left: 50%;
+-webkit-transform: translateX(-50%);
+        transform: translateX(-50%);}
+.loading .loading-bar .progress-bar{width: 0%;height: 50%;position: absolute;top: 25%;left: 1%;background-color:#ac1a2b;}
+.loading .loading-bar .bg-bar{width: 100%;height: 100%;background-color:#e3e3e3;}
+.hidden {display: none !important;}
+.video-js{width: 100%;height: 100% !important;z-index: 1;}
+.videoContainer, .video-wrap{width: 100%;height:100%;}
+.videoScreen { background: rgba(0,0,0,0.6); position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; display: none;}
+.videoScreen.hours36Screen { display: block; }
+.videoScreen.reveal { display: block !important; }
+#videoScreenPause{background: url(../img/video-pause-overlay.png) no-repeat center;
+-webkit-background-size: cover;
+        background-size: cover;}
+#videoScreenEnd{background: url(../img/mobile-end-screen-bg.jpg) no-repeat center;
+-webkit-background-size: cover;
+        background-size: cover;}
+.videoContainer footer{position: absolute; bottom: 0; left: 0; width: 100%;z-index: 1;}
+.copyright{line-height: 1;font-size: 2.5vw;margin: 0; padding-bottom: 2.5vw;}
+.videoContainer .video-screen-curtain{pointer-events: none;display: none;background: url(../img/video-square.png) repeat;background-size: 15%;position: fixed;top: 0;left: 0;width: 100%;height: 100%;z-index: 999;}
+.videoContainer .video-screen-curtain.reveal{display: block;}
+.videoScreen .video-message{color: #fff; font-family: 'VodafoneRg_W'; font-size: 4.2vw; padding: 5vw 14vw;}
+.videoScreen .video-message b{font-family: 'VodafoneRgBd_W';}
+.videoScreen .top-frame{padding: 10vw 8vw 0;}
+.videoScreen .bottom-frame{padding: 0 8vw 10vw;text-align: right;}
+#videoScreenPause .top-frame figure,
+#videoScreenPause .bottom-frame figure{height: 6vw;}
+.videoScreen .play-video{padding: 0 14vw;}
+.videoScreen .play-video .play { display: block; }
+#videoScreenPause .play-video figure{display: inline-block;vertical-align: middle;}
+#videoScreenPause .play-video p{color: #fff;font-family: 'VodafoneRg_W';font-size: 7vw;display: inline-block;vertical-align: middle;margin-left: 2vw;}
+#videoScreenPause .top-half{height: 75%;transform: translate(-50%, -50%);-webkit-transform: translate(-50%, -50%);position: relative;top: 50%;left: 50%;}
+.video-wrap .vjs-pause-button {background: url(../img/pause.png) no-repeat; width: 16vw; height: 16vw; position: fixed; top: 50%; left: 50%; margin-top: -8vw; margin-left: -8vw !important;}
+.video-js .vjs-big-play-button {width: 16vw; background: url(../img/play-video-btn.png) no-repeat; border: none; height: 16vw; top: 50%;left: 50%;margin-left: 0;margin-top: 0 !important; font-size: 0;}
+.video-js .vjs-big-play-button:before { display: none; }
+
+.mobile-landscape, .androidPoster { position: fixed;z-index: 9999;width: 100%;height: 100%; display: none;top: 0;left: 0; }
+.mobile-landscape, .androidPoster { display: none; }
+.androidPoster { background: url(../img/landscape.jpg) no-repeat top center;
+-webkit-background-size: cover;
+    background-size: cover; }
+
+#videoScreenEnd .video-message{color: black;font-size: 5vw;padding: 0 13vw;}
+#videoScreenEnd .top-frame{text-align: right;padding-top: 0;}
+#videoScreenEnd .bottom-frame{text-align: left;padding-bottom: 0;}
+#videoScreenEnd .top-frame figure,
+#videoScreenEnd .bottom-frame figure{height: 3.5vw;}
+#videoScreenEnd .rewatch{position: absolute;top: 7vw;right: 5vw;color: #000;font-family: 'VodafoneLt_W';font-size: 5vw;border-bottom: 0.1vw solid #000;}
+#videoScreenEnd .top figure{margin: 15vw auto 0;width: 65%;}
+#videoScreenEnd .top figure img{width: 54%;height: 100%; display: block; margin: 0 auto; }
+#videoScreenEnd .copyright{text-align: center;margin-top: 4vw;}
+#videoScreenEnd .bottom-links .mobile-hide { display: none; }
+#videoScreenEnd .bottom-links a { display: block; }
+#videoScreenEnd .bottom-links .google { background: url(../img/google-store-logo2.png) no-repeat center; height: 22vw;
+-webkit-background-size: 50% auto;
+        background-size: 50% auto;}
+#videoScreenEnd .bottom-links .appstore { background: url(../img/apple-store-logo2.png) no-repeat center; height: 22vw;
+-webkit-background-size: 50% auto;
+        background-size: 50% auto;}
+
+#openingDeskVid { width: 100%;height:100%; position: relative; background-color: #000; }
+.videoOverlay { position: absolute; width: 100%; left: 0; right: 0; top: 0; bottom: 0; background: url(../img/play-video-btn.png) no-repeat center center rgba(0,0,0,.4); z-index: 100; cursor: pointer; }
+#openingDeskVid video { object-fit: cover; }
+.mobile-loop-video video { object-fit: fill; }
+
+.more, .less { color: #000; font-size: 1.2vw; margin-top: 1vw; display: block; letter-spacing: 1px; text-decoration: underline; }
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.footer { bottom: 1.56vw; right: 3.13vw; z-index: 4; position: absolute; }
+.footer p { font-size: 0.78vw; color: #656565;font-family: 'VodafoneRg_W'; }
+
+footer { background: url(../img/footerbg.jpg) no-repeat center;
+-webkit-background-size: cover;
+ 		background-size: cover; }
+footer .inner { width: 42vw; margin: 0 auto }
+footer .inner .right { width: 67%; float: left; }
+footer p {font-family: 'VodafoneLt_W';font-size: 1.56vw;color: #fff;text-align: center;padding: 0 3vw;line-height: 1.3em;margin-top: 6vw;}
+footer .prepaid p { margin-top: 3vw; }
+footer p b { font-family: 'VodafoneRg_W'; }
+footer .inner figure { width: 33%; float: left; margin-top: 2vw; }
+footer .inner figure > img { width: 100%; }
+footer .inner .bottom-links { text-align: center; margin-top: 2vw; }
+footer .inner .bottom-links a { display: inline-block; margin-left: -4px; }
+footer .inner .bottom-links .google { background: url(../img/google-store-logo.png) no-repeat center; width: 13.54vw; height: 4.84vw;     margin-right: .2vw;
+-webkit-background-size: 13.54vw auto;
+		background-size: 13.54vw auto;}
+footer .inner .bottom-links .appstore { background: url(../img/apple-store-logo.png) no-repeat center;width: 13.54vw; height: 4.84vw; 
+-webkit-background-size: 13.54vw auto;
+		background-size: 13.54vw auto;}
+
+/* ==========================================================================
+   HELPER CLASSES
+   ========================================================================== */
+.hidden { display: none !important; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); -webkit-clip-path: inset(50%); clip-path: inset(50%); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; white-space: nowrap; /* 1 */ }
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus { clip: auto; -webkit-clip-path: none; clip-path: none; height: auto; margin: 0; overflow: visible; position: static; width: auto; white-space: inherit; }
+.invisible { visibility: hidden; }
+.cf:before,
+.cf:after { content: " "; /* 1 */ display: table; /* 2 */ }
+.cf:after { clear: both; }
+.clearfix:before,
+.clearfix:after {content: " "; display: table; }
+.clearfix:after { clear: both; }
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  #videoScreenEnd .top figure { margin: 5vw auto 0;}
+  #videoScreenEnd .top figure img { width: 50%; }
+}
+
+
+@media screen and (max-width: 900px) {
+
+	.logo { left: 8.53vw; width: 8.8vw; height: 8.8vw; top: 8vw; }
+	.logo.spec { left: 3vw; width: 8.8vw; height: 8.8vw; top: 3vw; }
+	.openingLink a {font-size: 4vw; padding: 3vw; }
+	.openingLink:before { border-bottom: .4vw solid #fff;border-left: .4vw solid #fff;width: 3vw;height: 3vw;}
+	.openingLink:after { border-top: .4vw solid #fff;border-right: .4vw solid #fff;width: 3vw;height: 3vw;}
+
+  .menuMobile { display: block; position: absolute; right: 5.87vw; top: 5.6vw; width: 13.33vw; height: 13.33vw; border: 1px solid #8a8a8a; -webkit-background-size: 12vw auto; background-size: 12vw auto; z-index: 9; }
+  .menuMobile img { width: 100%; }
+  .menuOpen { display: none; position: absolute; left: 0; top: 0; bottom: 0; right: 0; width: 100%; height: 100%; background: url(../img/square.png) rgba(0,0,0,.95);
+  z-index: 10; }
+  .menuOpen .menuOpenTop { float: left; width: 100%; padding: 2.67vw 2.67vw 13.33vw 8.53vw; }
+  .menuOpen .menuLogo { float: left; padding-top: 5.33vw; width: 8.8vw; }
+  .menuOpen .menuLogo a { display: block; width: 100%; }
+  .menuOpen .menuClose { float: right; width: 19.47vw; padding-top: 1.6vw; }
+  .menuOpen .menuClose img, .menuOpen .menuLogo img { width: 100%; display: block; }
+  .menuOpen .links { float: left; text-align: center; margin: 0 auto; }
+  .menuOpen .links p { color: #fff; font-size: 5.33vw; line-height: 1; font-family: 'VodafoneRg_W'; }
+  .menuOpen .links p span { display: block; font-size: 8vw; }
+  .menuOpen .link1 { float: left; width: 100%; margin-bottom: 14.67vw; }
+  .menuOpen .link1 img { margin: 0 auto 22px; display: block; }
+
+  .menuOpen .link2 small { width: 50px; background: #c0af91; height: 4px; display: block; margin: 0 auto 60px; }
+  .menuOpen .link2 { float: left; width: 100%; margin-bottom: 15vw; }
+  .menuOpen .link2 img { margin: 0 auto 22px; display: block; }
+
+  .menuOpen .link3 { float: left; width: 100%; }
+  .menuOpen .link3 img { display: inline-block; width: 12vw; }
+  .menuOpen .link3 p { display: inline-block; text-align: left; padding-left: 10px; vertical-align: text-bottom; margin-bottom: 2vw; }
+
+	.pageArea { padding: 2vw 8.53vw 2vw 8.53vw; width: 100%; }
+	.pageArea:after, .pageArea:before { content: none; }
+
+	h1 { font-size: 11.47vw; line-height: 1; padding-bottom: 4vw; margin-bottom: 5.33vw; }
+	h1.hLine:after { width: 16.67vw; }
+	h1.spec { margin-bottom: 4vw }
+	.text { font-size: 4.27vw; line-height: 1.3em; }
+	.text.spec { margin-bottom: 8vw; padding-bottom: 0 }
+
+	.pageForm input[type=text] { height: 11.33vw; font-size: 3.73vw; }
+	.pageForm .captcha { height: 11.65vw; }
+	.pageForm button.submitBtn { height: 12.67vw; font-size: 3.73vw;letter-spacing: .8vw; }
+	.pageForm input[type=text]::-webkit-input-placeholder { font-size: 3.73vw; }
+	.pageForm input[type=text]::-moz-placeholder { font-size: 3.73vw; }
+	.pageForm input[type=text]:-ms-input-placeholder { font-size: 3.73vw; }
+	.pageForm input[type=text]:-moz-placeholder { font-size: 3.73vw; }
+	.pageForm .row { margin-bottom: 3.33vw; }
+	.pageForm button.againSend { font-size: 3.46vw; }
+  .pageForm button.againSend:before { width: 5vw; height: 5vw; }
+	.pageForm .timer { font-size: 3.46vw; }
+
+	.footer { right: auto; text-align: center; width: 100%; }
+	.footer p { font-size: 18px; }
+
+	.content.content2 { padding-top: 0; background: url(../img/bg-img2-mobile.jpg) no-repeat top center #f1f1f1;
+	-webkit-background-size: 100% auto;
+	 		background-size: 100% auto; }
+	.content.content4 { padding-top: 0; background: url(../img/content4bg-mobile.jpg) no-repeat top center #f1f1f1;
+	-webkit-background-size: 100% auto;
+	 		background-size: 100% auto; }
+	
+	.formPage { padding-top: 26vw; padding-bottom: 20vw; position: relative; }
+	.pageArea .pageNumber { font-size: 6.93vw; right: 7.53vw; top: 38vw; }
+  .pageArea .pageNumber:before { width: 8vw;height: .5vw; left: -11vw; top: 3.5vw; }
+
+	.content.content4 .pageArea {padding: 22vw 0 2vw 0;}
+	.content.content4 h1.headSpec { font-size: 6vw; text-align: left; line-height: 1.25em;font-family: 'VodafoneRg_W'; }
+	.content.content4 .text.center { text-align: left; padding: 4vw 8.53vw;}
+	.vfServices .infoText { font-size: 4.27vw; line-height: 1.4em; }
+	.vfServicesText.text { font-size: 4.27vw; line-height: 1.4em;padding:4vw 8.53vw 8vw;  }
+	.vfServices h3 {font-size: 6vw; margin-bottom: 4vw; padding: 4vw 8.53vw; border-bottom: 1px solid #dcdcdc; }
+	.vfServices .text { font-size: 5.6vw; margin-bottom: 1vw; line-height: 1.1em; }
+	.pageArea.pageArea2 { width: 100%; padding: 22vw 0 2vw 0; margin-bottom: 0 }
+	.vfServices li { padding: 4.5vw 8.53vw 4.5vw 8.53vw }
+	h1.hLine.center:after { left: 8.53vw  }
+	h1.headSpec {font-size: 11.47vw; line-height: 1em; padding: 4vw 8.53vw; margin-bottom: 0}
+	h1.hLine:after { left: 8.53vw}
+	h1.hLine.spec:after { left: 0}
+	.infoHead { font-size: 9.2vw; margin: 4vw 8.53vw; line-height: 1.1em;}
+	.infoHead:after { width: 3.5vw; height: 3.5vw; border-top: .5vw solid #000; border-right: .5vw solid #000; }
+	.infoHead:before { width: 3.5vw; height: 3.5vw; border-bottom: .5vw solid #000; border-left: .5vw solid #000; }
+	.infographic .bdLeftT:before { width: 3.5vw; height: 3.5vw;border-top: .5vw solid #000;border-left: .5vw solid #000;right: -3.3vw; }
+	.infographic .bdRightT:before { width: 3.5vw; height: 3.5vw;border-top: .5vw solid #000;border-right: .5vw solid #000; }
+	.infographic .bdLeftB:before { width: 3.5vw; height: 3.5vw; border-bottom: .5vw solid #000; border-left: .5vw solid #000; }
+	.infographic .bdRightB:before { width: 3.5vw; height: 3.5vw; border-bottom: .5vw solid #000; border-right: .5vw solid #000;left: -3.3vw; }
+	.infographic { margin:8vw 8.53vw 8vw;  }
+	.infographic p { font-size: 4.27vw; line-height: 1.4em; }
+	.infographic li div { padding: 4.5vw 4vw; border-bottom: 1px solid #787878; }
+	.infographic .redNote { font-size: 5.6vw; }
+	.infographic .redNote b { font-size: 5.6vw; }
+	.infographic span.bd { height: 12vw; background: #000; }
+	.vfServices li:last-child { padding-bottom: 4.5vw;}
+	.vfServices .col-2 { margin-top: 9vw }
+	.vfServices .switch { width: 16vw; height: 8.45vw; }
+	.vfServices .switch .slider {border-radius: 5vw;}
+	.vfServices .switch .slider:before { height: 7.5vw;width: 7.5vw; left: 0; top: .2vw;
+	-webkit-box-shadow: 0.5vw 0.5vw 0.5vw rgba(0,0,0,0.2); 
+	    	box-shadow: 0.5vw 0.5vw 0.5vw rgba(0,0,0,0.2); }
+	.vfServices .switch input:checked + .slider:before { 
+	-webkit-transform: translateX(107%);
+        -ms-transform: translateX(107%);
+    		transform: translateX(107%); }
+   	.appDown { margin: 7vw 8.53vw 0; font-size: 4.27vw;height: 14.69vw;padding-top: 3vw; padding-left: 18vw;
+    -webkit-background-size: 13.69vw auto;
+    		background-size: 13.69vw auto; }
+
+  .popup-inner { width: 90%; min-height: 60vw; padding: 11vw 8vw 7vw 8vw; }
+  .popup-inner .popup-close { width: 7.73vw; height: 8.53vw; top: 7.33vw; right: 5.07vw; }
+  .popup-inner h3 { font-size: 11.47vw; margin-bottom: 4vw; line-height: 1.1em; }
+  .popup-inner p { font-size: 4.27vw; margin-bottom: 5.33vw; }
+  .button, .pageForm button.submitBtn { font-size: 3.73vw; padding: 4.3vw 1vw; }
+  .popup-inner p.error { font-size: 4.1vw; margin-top: 2.5vw; }
+  .popup-inner input { padding: 4.3vw 1vw; margin-bottom: 4vw; font-size: 5vw; }
+  .popup-inner .success-screen { padding-top: 6vw; }
+  .popup-inner .success-screen:after { width: 22vw; height: 22vw; top: 10vw; }
+  .popup-inner .error-screen { padding-top: 6vw; }
+  .popup-inner .error-screen:after { width: 22vw; height: 22vw; top: 10vw; }
+  ::-webkit-input-placeholder { font-size: 3.3vw}
+  ::-moz-placeholder { font-size: 3.3vw }
+  :-ms-input-placeholder { font-size: 3.3vw }
+  :-moz-placeholder { font-size: 3.3vw }
+
+	footer .inner { width: 90vw }
+	footer .inner figure { width: 36%;margin-top: 4vw; }
+	footer .inner .right { width: 64%; }
+  footer .inner .right p { font-size: 4vw; margin-top: 14vw; }
+	footer .inner.prepaid .right p { margin-top: 7vw; }
+	footer .inner .bottom-links .mobile-hide { display: none; }
+	footer .inner .bottom-links .google,
+	footer .inner .bottom-links .appstore { width: 36.54vw; height: 13vw; margin: 0 auto;
+	-webkit-background-size: 100% auto;
+    		background-size: 100% auto; }
+
+  .page404 h1 { font-size: 47.6vw; margin-bottom: 6.67vw; }
+  .page404 p { font-size: 6.13vw; }
+
+  .homePage { background: #fff; padding: 6.07vw 10.67vw 4.33vw; border: 1px solid #a0a0a0; position: absolute; left: 4.93vw; width: 90%; bottom: 6.93vw; }
+  .homePage h1 { font-size: 6.67vw; padding-bottom: 0vw; margin-bottom: 3.33vw; font-family: 'VodafoneLt_W'; }
+  .homePage h1 span { color: #e60000; display: block; font-family: 'VodafoneRg_W'; }
+  .homePage .text { padding-bottom: 2.4vw; font-size: 3.27vw; }
+  .homePage .playHome { display: block; margin-bottom: 3vw; }
+  .homePage .playHome figure { display: inline-block; vertical-align: middle; width: 8.27vw; height: 8.27vw; }
+  .homePage .playHome img { display: block; width: 100%; }
+  .homePage .playHome p { font-size: 3.67vw; color: #e60000; display: inline-block; vertical-align: middle; margin-left: 2vw; }
+  .homePage .detailView { color: #000; text-align: center; border-bottom: 1px solid #000; display: table; margin: 0 auto; font-size: 2.73vw; }
+
+  .vfYanimda h1 { font-size: 6.67vw; padding-bottom: 0vw; margin-bottom: 3.33vw; color: #fff; font-family: 'VodafoneLt_W'; }
+  .vfYanimda span { font-family: 'VodafoneRg_W'; }
+  .vfYanimda .text { padding-bottom: 2.4vw; font-size: 3.27vw; color: #fff; }
+  .vfYanimda .playVfYanimda { display: block; margin-bottom: 3vw; }
+  .vfYanimda .playVfYanimda figure { display: inline-block; vertical-align: middle; width: 8.27vw; height: 8.27vw; }
+  .vfYanimda .playVfYanimda img { display: block; width: 100%; }
+  .vfYanimda .playVfYanimda p { font-size: 3.67vw; color: #fff; display: inline-block; vertical-align: middle; margin-left: 2vw; }
+
+  
+  .more, .less { font-size: 4.2vw; }
+}
+
+@media screen and (max-width: 450px) {
+	.openingLink a {font-size: 4.27vw}
+	.openingLink:before { border-bottom: .5vw solid #fff;border-left: .5vw solid #fff;width: 3.5vw;height: 3.5vw;}
+	.openingLink:after { border-top: .5vw solid #fff;border-right: .5vw solid #fff;width: 3.5vw;height: 3.5vw;}
+	.logo.spec { left: 8.53vw; top: 8vw; }
+	.pageForm input[type=text] { height: 11.7vw; }
+	.pageForm button.againSend { font-size: 4.46vw; }
+	.pageForm .timer { font-size: 4.46vw; }
+  .footer { bottom: 3vw; }
+  .footer p { font-size: 3.4vw; }
+  .homePage { padding: 9.07vw 10.67vw 5.33vw; bottom: 10.93vw; }
+  .homePage h1 { font-size: 10.67vw; }
+  .homePage .text { padding-bottom: 4.4vw; font-size: 4.27vw; }
+  .homePage .playHome { margin-bottom: 8vw; }
+  .homePage .playHome p { font-size: 4.67vw; }
+  .homePage .detailView { font-size: 3.73vw; }
+
+  .vfYanimda h1 { font-size: 10.67vw; }
+  .vfYanimda .text { padding-bottom: 4.4vw; font-size: 4.27vw; }
+  .vfYanimda .playVfYanimda { margin-bottom: 8vw; }
+  .vfYanimda .playVfYanimda p { font-size: 4.67vw; }
+  .menuOpen .menuOpenTop { padding: 2.67vw 2.67vw 1vw 8.53vw; }
+  .menuOpen .link1 { margin-bottom: 10vw; }
+  .menuOpen .link2 small { margin: 0 auto 40px; }
+  .menuOpen { position: fixed; }
+  .menuOpen .link2 { margin-bottom: 12vw; }
+  .menuOpen .links p span { font-size: 6.5vw; }
+
+}
+
+.video-js .vjs-big-play-button{
+	width : 100% !important;
+	height : 100% !important;
+	background-position:center center !important;
+	left:0px !important;
+	top:0px !important;
+	padding:0px !important;
+	position:fixed !important;
+	right:0 !important;
+	bottom:0 !important;
+}

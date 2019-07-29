@@ -1,0 +1,113 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title></title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<loading *ngIf="isLoading"></loading>
+	<section class="main">
+		<div class="content content4 pdPageTop pdPageBot">
+			<a class="logo" alt="Vodafone" href="javascript:;"></a>
+			<div *ngIf="isLoading==false" class="pageArea cornerNone paddingTN">
+				<h1 class="hLine center headSpec headSpec2">
+					Merhaba <span>{{name}}</span>,<br> Vodafone'a Hoş Geldiniz
+				</h1>
+				<p class="text center paddingBN">Tarifenizle ilgili detaylara
+					aşağıdan ulaşabilirsiniz.</p>
+				<h2 class="center infoHead">{{tariffName}}</h2>
+				<div class="infographic clearfix">
+					<span class="bd bdLeftT"></span> <span class="bd bdRightT"></span>
+					<span class="bd bdLeftB"></span> <span class="bd bdRightB"></span>
+					<ul>
+						<li>
+							<div class="col-1">
+								<p>Tarifenizde<br></p>
+								<p [innerHTML]=content></p>
+							</div>
+						</li>
+						<li>
+							<div class="col-1">
+								<p [innerHTML]=tariffDesc></p>
+							</div>
+						</li>
+						<!--                  <li>
+                                <div class="col-1">
+                                    <p>
+                                        Tarifen için<br>
+                                        <span class="redNote"><b>24 aylık kontrat</b></span>
+                                        imzalamışsın.
+                                    </p>
+                                </div>
+                            </li>  -->
+						<li>
+							<div class="col-1">
+								<p>
+									İlk fatura kesim tarihiniz<br> <span class="redNote"><b>{{billDate}}</b></span>
+									{{cutOffDate}}
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="col-1">
+								<p [innerHTML]="tariffFeeDesc"></p>
+							</div>
+						</li>
+						<li *ngIf="isAddonEmpty">
+							<div class="col-1">
+								<p>
+									Ek paketler<br> <span *ngFor="let addon of addonList"
+										class="redNote">{{addon.commercialName}}</span>
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="col-1">
+								<p>
+									Fatura Detayları<br> <span class="redNote">Toplam
+										<b>{{monthlyTotal}}</b>
+									</span> <span class="redNote">Tarife <b>{{tariffFee}}</b></span> <span
+										class="redNote">Ek Paketler <b>{{monthlyAddonsFee}}</b></span>
+									<span class="redNote">Cihaz Kampanyası
+									 <b>{{monthlyDeviceFee}}</b></span>
+									<span class="redNote">Devlete Ödenen <br> Diğer
+										Vergiler <b>{{monthlyTaxesFee}}</b></span>
+
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="col-1">
+								<p>
+									Tarifenizde</p> <p [innerHTML]=proratedContent></p> olacak. Faturanızda da<br>
+									<span class="redNote"><b>{{expectedFee}}</b> gelecek. </span>
+									<p>Ne eksik ne fazla.</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="inner cf">
+				<figure>
+					<img src="assets/img/vodafone-footer.png" alt="">
+				</figure>
+				<div class="right">
+					<p>
+						<b>Vodafone Yanımda Uygulaması</b>’nı indirerek, tarifenizle
+						ilgili her detayı takip edebilirsiniz. 
+					</p>
+                    <div class="bottom-links">
+                            <a target="_blank" href="https://play.google.com/store/apps/details?id=com.vodafone.selfservis&hl=tr" class="google"></a>
+                            <a target="_blank" href="https://itunes.apple.com/tr/app/vodafone-yan%C4%B1mda/id489845659?l=tr&mt=8" class="appstore mobile-hide"></a>
+                    </div>
+				</div>
+			</div>
+		</footer>
+	</section>
+</body>
+</html>
