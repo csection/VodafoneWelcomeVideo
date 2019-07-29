@@ -34,7 +34,7 @@ button { font-family: 'VodafoneRg_W'; width: 100%; display: block; font-size: 1.
 .text b { font-family: 'VodafoneRgBd_W'; }
 .mr5 { margin-right: 5%; }
 .center { text-align: center; }
-.colorRed { color: #e60000; }
+.colorRed { color: #e60000; } 
 .pdPageTop { padding-top: 5vw; }
 .pdPageBot { padding-bottom: 8vw; }
 .posRel { position: relative; }

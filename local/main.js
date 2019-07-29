@@ -26,7 +26,7 @@ V = {
                if (/android/i.test(userAgent)) {
                    $('.androidPoster').hide();
                } else {
-                   landscapePlayer.pause();
+                   landscapePlayer.pause(); 
                }
            }else{
                $('.mobile-landscape').css({'display':'block'});

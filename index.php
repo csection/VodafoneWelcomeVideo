@@ -14,7 +14,7 @@
 		$string = stripslashes($string);
 		$string = str_replace('/', '', $string);
 
-		return $string;
+		return $string; 
 	}
 
 
